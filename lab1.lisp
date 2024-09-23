@@ -17,6 +17,7 @@ CL-USER> (cdr first-task)
 ; 4
 CL-USER> (THIRD first-task)
 ; 7
+
 ; 5
 CL-USER> (LAST first-task)
 ; ((C D))
