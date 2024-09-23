@@ -1,85 +1,61 @@
 ; 1
-CL-USER> (defvar first-task nil)
-   (setq first-task (cons 'A
-		(cons (list 'B (list 'c 'd) ()) (list 7 (list 'c 'd)))))
+(defvar first-task nil)
+(setq first-task (cons 'A(cons (list 'B (list 'c 'd) ()) (list 7 (list 'c 'd)))))
 (print first-task)
 
-;(A (B (C D) NIL) 7 (C D))
-
 ; 2
-CL-USER> (CAR first-task)
-; A
+(print (CAR first-task))
 
 ; 3
-CL-USER> (cdr first-task)
-; ((B (C D) NIL) 7 (C D))
+(print (cdr first-task))
 
 ; 4
-CL-USER> (THIRD first-task)
-; 7
+(print (THIRD first-task))
 
 ; 5
-CL-USER> (LAST first-task)
-; ((C D))
+(print (LAST first-task))
 
 ; 6.1.1
-CL-USER> (ATOM (NTH 1 first-task))
-; NIL
+(print (ATOM (NTH 1 first-task)))
 
 ; 6.1.2
-CL-USER> (ATOM (CDR first-task))
-; NIL
+(print (ATOM (CDR first-task)))
 
 ; 6.1.3
-CL-USER> (ATOM (CAR (NTHCDR 2 first-task)))
-; T
+(print (ATOM (CAR (NTHCDR 2 first-task))))
 
 ; 6.2.1
-CL-USER> (LISTP (SECOND (NTH 1 first-task)))
-; T
+(print (LISTP (SECOND (NTH 1 first-task))))
 
 ; 6.2.2
-CL-USER> (LISTP (FIRST first-task))
-; NIL
+(print (LISTP (FIRST first-task)))
 
 ; 6.2.3
-CL-USER> (LISTP (THIRD (CDR first-task)))
-; T
+(print (LISTP (THIRD (CDR first-task))))
 
 ; 7.1.1
-CL-USER> (EQL (THIRD first-task) 7)
-; T
+(print (EQL (THIRD first-task) 7))
 
 ; 7.1.2
-CL-USER>  (EQL (CDR first-task) '('C 'D))
-; NIL
+(print (EQL (CDR first-task) '('C 'D)))
 
 ; 7.2.1
-CL-USER> (EQUAL (CAR first-task) 'A)
-; T
+(print (EQUAL (CAR first-task) 'A))
 
 ; 7.2.2
-CL-USER> (EQUAL (SECOND (NTH 1 first-task))(FIRST (LAST first-task)))
-; T
+(print (EQUAL (SECOND (NTH 1 first-task))(FIRST (LAST first-task))))
 
 ; 7.3.1
-CL-USER> (EQUALP (THIRD first-task) 7.0)
-; T
+(print (EQUALP (THIRD first-task) 7.0))
 
 ; 7.3.2
-CL-USER>  (EQUALP (CAR first-task) 'a)
-; T
-
+(print (EQUALP (CAR first-task) 'a))
 
 ; 8
-CL-USER> (APPEND first-task (SECOND first-task))
-; (A (B (C D) NIL) 7 (C D) B (C D) NIL)
+(print (APPEND first-task (SECOND first-task)))
 
 ; 15mod8 = 7
-CL-USER> (defvar sub-list nil)
-CL-USER> (defvar main-list nil)
-CL-USER> (setq sub-list (list 'D 'E 'F) 
-		   main-list(list sub-list(cdr sub-list)(last sub-list) 4))
-CL-USER> (print main-list)
-
-; ((D E F) (E F) (F) 4) 
+(defvar sub-list nil)
+(defvar main-list nil)
+(setq sub-list (list 'D 'E 'F) main-list(list sub-list(cdr sub-list)(last sub-list) 4))
+(print main-list)
