@@ -109,11 +109,11 @@ CL-USER> (append first-task (second first-task))
 ; 15mod8 = 7
 CL-USER> (defvar sub-list nil)
 CL-USER> (defvar main-list nil)
-CL-USER> (setq sub-list (list 'D 'E 'F) 
-		   main-list(list sub-list(cdr sub-list)(last sub-list) 4))
+CL-USER> (setq sub-list '( D E F) 
+		   main-list(list (list (car sub-list)(cdr sub-list))(last sub-list) 4))
 CL-USER> (print main-list)
 
-; ((D E F) (E F) (F) 4) 
+; ((D (E F)) (F) 4) 
 
 ```
  
