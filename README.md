@@ -31,7 +31,7 @@ CL-USER> (defvar first-task nil)
 ;(A (B (C D) NIL) 7 (C D))
 
 ; 2
-CL-USER> (CAR first-task)
+CL-USER> (car first-task)
 ; A
 
 ; 3
@@ -39,64 +39,64 @@ CL-USER> (cdr first-task)
 ; ((B (C D) NIL) 7 (C D))
 
 ; 4
-CL-USER> (THIRD first-task)
+CL-USER> (third first-task)
 ; 7
 
 ; 5
-CL-USER> (LAST first-task)
-; ((C D))
+CL-USER> (print (car (last first-task)))
+; (C D)
 
 ; 6.1.1
-CL-USER> (ATOM (NTH 1 first-task))
+CL-USER> (atom (nth 1 first-task))
 ; NIL
 
 ; 6.1.2
-CL-USER> (ATOM (CDR first-task))
+CL-USER> (atom (cdr first-task))
 ; NIL
 
 ; 6.1.3
-CL-USER> (ATOM (CAR (NTHCDR 2 first-task)))
+CL-USER> (atom (car (nthcdr 2 first-task)))
 ; T
 
 ; 6.2.1
-CL-USER> (LISTP (SECOND (NTH 1 first-task)))
+CL-USER> (listp (second (nth 1 first-task)))
 ; T
 
 ; 6.2.2
-CL-USER> (LISTP (FIRST first-task))
+CL-USER> (listp (first first-task))
 ; NIL
 
 ; 6.2.3
-CL-USER> (LISTP (THIRD (CDR first-task)))
+CL-USER> (listp (third (cdr first-task)))
 ; T
 
 ; 7.1.1
-CL-USER> (EQL (THIRD first-task) 7)
+CL-USER> (eql (third first-task) 7)
 ; T
 
 ; 7.1.2
-CL-USER>  (EQL (CDR first-task) '('C 'D))
+CL-USER>  (eql (cdr first-task) '('C 'D))
 ; NIL
 
 ; 7.2.1
-CL-USER> (EQUAL (CAR first-task) 'A)
+CL-USER> (equal (car first-task) 'A)
 ; T
 
 ; 7.2.2
-CL-USER> (EQUAL (SECOND (NTH 1 first-task))(FIRST (LAST first-task)))
+CL-USER> (equal (second (nth 1 first-task))(first (last first-task)))
 ; T
 
 ; 7.3.1
-CL-USER> (EQUALP (THIRD first-task) 7.0)
+CL-USER> (equalp (third first-task) 7.0)
 ; T
 
 ; 7.3.2
-CL-USER>  (EQUALP (CAR first-task) 'a)
+CL-USER>  (equalp (car first-task) 'a)
 ; T
 
 
 ; 8
-CL-USER> (APPEND first-task (SECOND first-task))
+CL-USER> (append first-task (second first-task))
 ; (A (B (C D) NIL) 7 (C D) B (C D) NIL)
 
 ```
