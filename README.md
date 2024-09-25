@@ -83,7 +83,7 @@ CL-USER> (equal (car first-task) 'A)
 ; T
 
 ; 7.2.2
-CL-USER> (equal (second (nth 1 first-task))(first (last first-task)))
+CL-USER> (equal (second (nth 1 first-task)) (first (last first-task)))
 ; T
 
 ; 7.3.1
@@ -109,11 +109,11 @@ CL-USER> (append first-task (second first-task))
 ; 15mod8 = 7
 CL-USER> (defvar sub-list nil)
 CL-USER> (defvar main-list nil)
-CL-USER> (setq sub-list '( D E F) 
-		   main-list(list (list (car sub-list)(cdr sub-list))(last sub-list) 4))
+CL-USER> (setq sub-list '( D E F)
+		 main-list (list sub-list (cdr sub-list) (list 'F) 4))
 CL-USER> (print main-list)
 
-; ((D (E F)) (F) 4) 
+; ((D E F) (E F) (F) 4) 
 
 ```
  
