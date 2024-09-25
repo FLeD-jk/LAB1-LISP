@@ -57,5 +57,5 @@
 ; 15mod8 = 7
 (defvar sub-list nil)
 (defvar main-list nil)
-(setq sub-list '( D E F) main-list(list (list (car sub-list)(cdr sub-list))(last sub-list) 4))
+(setq sub-list '( D E F) main-list (list sub-list (cdr sub-list) (list 'F) 4))
 (print main-list)
