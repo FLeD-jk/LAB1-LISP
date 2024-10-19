@@ -4,7 +4,7 @@
 (print first-task)
 
 ; 2
-(print (cons first-task))
+(print (car first-task))
 
 ; 3
 (print (cdr first-task))
